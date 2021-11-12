@@ -1,3 +1,4 @@
+const { Router } = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -13,6 +14,10 @@ mongoose.connect("mongodb+srv://dava:Dava0316@clusteg46c4.pq9t3.mongodb.net/cicl
 
 
 // Operaciones Crud
+
+route.get('/',(req, res)=> {
+    res.send("Este es el inicio de mi primera API")
+});
 
 app.use(route);
 app.listen(3000, ()=> {
