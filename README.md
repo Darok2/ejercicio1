@@ -12,3 +12,8 @@
 
     instalar paquetes
         npm install express
+
+    Compilar para verificar funcionalidad
+        node server.js
+    
+    
