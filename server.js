@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
-
+const UsuarioSchema = require("./Modelos/Usuario.js");
 
 const app = express();
 const route = express.Router();
@@ -19,6 +19,24 @@ route.get('/',(req, res)=> {
     res.send("Este es el inicio de mi primera API")
 });
 
+
+//Insertar
+
+route.post('/Usuario', (req, res) =>{
+    let nuevoUsuario = new UsuarioSchema({
+     
+        idUsuario: req.body.id,
+        nombreUsuario: req.body.nombre,
+        telefonoUsuario: req.body.telefono,
+        ciudadUsuario: req.body.ciudad,
+    });
+    nuevoUsuario.save(function(err, datos){
+        if(err){
+            console.log(err);
+        }
+        res.send("Usuario Almacenado")
+    })
+})
 app.use(route);
 app.listen(3000, ()=> {
      console.log("servidor corriendo en el puerto 3000")
