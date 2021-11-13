@@ -1,6 +1,7 @@
 # ejercicio1
 
-
+    crear nueva carpeta
+    nkdir Modelos
     crear nuevo archivo:  
     npm  init
     
@@ -16,4 +17,8 @@
     Compilar para verificar funcionalidad
         node server.js
     
+    instalar paquete base de datos mongoose 
+        npm i mongoose
+
+    postman para realizar pruebas de conectividad 
     
