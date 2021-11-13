@@ -19,7 +19,19 @@ route.get('/',(req, res)=> {
     res.send("Este es el inicio de mi primera API")
 });
 
+// Consultar todos
+route.get('/', (req, res) => {
+    UsuarioSchema.find(function(err, datos) {
+        
 
+        if(err){
+            console.log("Error leyendo los usuarios");
+        }
+        else{
+        res.send(datos);
+        }
+    })
+})
 //Insertar
 
 route.post('/Usuario', (req, res) =>{
